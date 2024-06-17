@@ -1,0 +1,19 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  width: 100vw;
+  h1 {
+    @apply text-red-500 text-center font-bold mb-4 rounded-full p-5 shadow-xl;
+    font-size: 5vw;
+  }
+  button{
+    background-color: #447aa1;
+    color: white;
+    padding: 0.5em;
+    border-radius: 1em;
+    margin-bottom: 1em;
+  }
+}

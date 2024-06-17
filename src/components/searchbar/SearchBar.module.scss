@@ -1,0 +1,9 @@
+.searchContainer {
+  @apply flex justify-center w-1/2 max-md:flex-1 max-md:pl-4 max-md:pr-4 rounded-3xl border-2 border-gray-300 bg-white;
+  .searchInput {
+    @apply w-full p-2 rounded-3xl ;
+  }
+  button{
+    @apply text-xl text-gray-500 pr-4;
+  }
+}

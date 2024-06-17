@@ -1,0 +1,28 @@
+.pageContainer{
+    @apply flex flex-col items-start gap-4 p-4;
+    h2{
+        @apply text-4xl font-semibold;
+    }
+    .btnContainer{
+        @apply flex gap-8 items-center justify-center w-full;
+        button{
+            @apply text-2xl;
+        }
+    }
+
+    .searchOptionsBtns{
+        @apply flex gap-4 justify-start items-center w-full;
+        button{
+            @apply text-xl;
+        }
+        
+        .active{
+            border-bottom: 2px solid #000;
+        }
+    }
+
+}
+
+.notLogged{
+    @apply w-full text-center pt-8 text-5xl text-gray-500 opacity-50;
+}

@@ -1,0 +1,124 @@
+.formContainer {
+  @apply flex flex-col gap-4 w-full h-full p-4;
+  h3 {
+    @apply text-2xl font-bold;
+  }
+  .createForm {
+    @apply flex flex-col gap-4 w-full h-full;
+    input,
+    textarea,
+    .priceContainer,
+    .categoryContainer {
+      @apply w-full p-2 rounded-3xl border-2 border-gray-300;
+    }
+    input,
+    .priceContainer,
+    .categoryContainer {
+      @apply h-12;
+    }
+
+    .priceContainer {
+      @apply flex items-center justify-center;
+      input {
+        @apply border-none h-full flex-1;
+      }
+      .priceInput {
+        flex-grow: 3;
+        border-left: 1px solid black;
+        @apply rounded-none;
+      }
+    }
+
+    .categoryContainer {
+      @apply flex items-center justify-start;
+      input {
+        @apply border-none h-full flex-1;
+      }
+    }
+
+    h4 {
+      @apply text-lg font-semibold;
+    }
+
+    .inputFileLabel {
+      @apply p-2 w-full text-center text-white rounded-3xl flex justify-center items-center;
+      background-color: #447aa1;
+      span {
+        @apply flex-1;
+      }
+    }
+
+    .inputFile + .inputFileLabel {
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        outline: 1px solid #447aa1;
+        background-color: white;
+        color: #447aa1;
+      }
+    }
+
+    .inputFile:focus ~ .inputFileLabel {
+      outline: 1px solid #447aa1;
+      background-color: white;
+      color: #447aa1;
+    }
+    input[type="file"] {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+      }
+
+    .checkboxContainer {
+      @apply flex items-center justify-start gap-2;
+      input[type="checkbox"] {
+        @apply h-6 w-6;
+      }
+      label {
+        @apply text-lg;
+      }
+    }  
+
+    .pictureInputsContainer {
+      @apply flex items-center justify-start w-full gap-2 max-md:flex-col max-md:items-start;
+      height: 15vh;
+
+
+      .addPictureBtn {
+        @apply text-gray-400;
+        font-size: 10vh;
+      }
+
+      .imageContainer {
+        @apply h-full relative;
+        img {
+          @apply h-full object-cover;
+        }
+        button {
+          @apply absolute top-0 right-0 bg-white rounded-full text-black;
+        }
+      }
+    }
+
+    .errorP {
+      @apply text-red-500 max-w-full;
+    }
+
+    .createPostBtn, .createGroupBtn {
+      @apply p-2 w-fit text-center text-white rounded-3xl transition-all duration-100;
+      background-color: #447aa1;
+      &:hover {
+        background-color: white;
+        color: #447aa1;
+        outline: 2px solid #447aa1;
+      }
+    }
+
+    .createGroupBtn{
+      @apply w-1/2;
+    }
+  }
+}

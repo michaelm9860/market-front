@@ -1,0 +1,56 @@
+.carousel {
+  @apply flex flex-col w-full h-full justify-center items-center gap-1;
+
+
+  .currentSlideContainer {
+    @apply relative;
+
+    height: 80%;
+
+
+    @media (max-width: 768px) {
+        width: 100vw;
+    }
+    .currentSlide {
+      @apply h-full w-full;
+    }
+
+    .moveSlideBtn {
+      @apply absolute top-1/2 p-2 text-4xl text-white h-fit;
+      text-shadow: 
+      -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000; 
+      transform: translateY(-50%);
+
+    }
+
+    .nextBtn {
+      @apply right-0;
+    }
+
+    .prevBtn {
+      @apply left-0;
+    }
+  }
+
+  .allSlides {
+    @apply flex gap-1 w-full;
+    height: 20%; 
+    scroll-behavior: smooth;
+    @media (max-width: 768px) {
+        height: 20vh;
+        
+    }
+
+    .imageThumbnail {
+      @apply h-full opacity-40;
+    }
+
+    :first-child {
+      @apply opacity-100;
+      border: 2px solid #447aa1;
+    }
+  }
+}

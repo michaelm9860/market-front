@@ -1,0 +1,152 @@
+.carouselContainer {
+  @media (min-width: 768px) {
+    height: 88vh;
+    width: auto;
+  }
+  width: 100vw;
+}
+.postDetails {
+  @apply flex max-md:flex-col p-4 max-md:gap-1 gap-4;
+  .postName {
+    @apply text-2xl font-semibold flex-grow;
+  }
+  .currentPrice,
+  .originalPrice {
+    @apply text-xl;
+  }
+
+  .originalPrice {
+    @apply line-through italic text-red-500 max-md:order-last;
+  }
+
+  .timeStamp {
+    @apply text-lg italic font-semibold text-gray-500 opacity-80;
+  }
+}
+
+.additionalInfo {
+  @apply flex max-md:flex-col p-4 justify-between;
+  .postInfo {
+    @apply flex flex-col lg:w-2/5 w-full;
+    .postDescription {
+      @apply text-lg w-full;
+    }
+    .postLocation {
+      @apply text-lg pt-4 pb-4 italic;
+    }
+  }
+  .userInfo {
+    @apply flex flex-col lg:w-2/5 w-full items-end pt-4 gap-4;
+    .seller {
+      @apply flex w-fit gap-4 items-center;
+      .userPfp {
+        @apply rounded-full w-fit;
+        height: 10vh;
+        border: 2px solid #447aa1;
+      }
+      .userName {
+        @apply text-xl font-semibold pt-4 pb-4;
+      }
+    }
+    .userContact {
+      @apply flex w-fit h-fit items-start gap-1 max-md:flex-col max-md:items-end;
+      .showContactOptions {
+        background-color: #447aa1;
+        @apply text-white p-2 rounded-3xl h-fit;
+      }
+      .contactOptions {
+        @apply flex flex-col rounded-3xl items-center gap-1 bg-gray-100;
+        border: 1px solid gray;
+        hr {
+          @apply w-4/5 rounded-3xl;
+          border-top: 1px solid gray;
+        }
+        button {
+          @apply p-2;
+        }
+        .openWhatsappBtn {
+          @apply rounded-t-3xl;
+          color: #25d366;
+        }
+      }
+    }
+  }
+}
+
+.postControls {
+  @apply flex gap-4 items-center justify-end p-4;
+  .editPostBtn {
+    @apply p-2 text-blue-500;
+  }
+  .deletePostBtn {
+    @apply p-2 text-red-500;
+  }
+}
+
+.editOptions {
+  @apply flex flex-col gap-4 items-end p-4 pt-8;
+
+  .saveChangesBtn {
+    @apply text-white transition-all duration-100 p-2 rounded-3xl;
+    background-color: #447aa1;
+    &:hover {
+      outline: 2px solid #447aa1;
+      color: #447aa1;
+      background-color: white;
+    }
+  }
+  input,
+  textarea {
+    @apply w-full p-2 rounded-3xl border-2 border-gray-300;
+  }
+  input {
+    @apply h-8;
+  }
+
+  .errorP {
+    @apply text-red-500 max-w-full;
+  }
+  .editPicturesContainer {
+    @apply flex items-center justify-end gap-2 max-md:flex-col;
+    @media (min-width: 768px) {
+      height: 20vh;
+    }
+    .addPicture {
+      @apply text-gray-400 max-md:order-last;
+      font-size: 10vh;
+    }
+    .editPicture {
+      @apply h-full relative max-md:h-auto max-md:w-full;
+      img {
+        @apply h-full object-cover max-md:h-auto max-md:w-full;
+      }
+      button {
+        @apply absolute top-0 max-md:h-12 h-8 max-md:w-12 w-8 bg-white rounded-full text-black max-md:text-3xl text-2xl;
+      }
+      .removePictureBtn{
+        @apply right-0;
+      }
+      .setFirstBtn{
+        @apply left-0;
+      }
+    }
+    input {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+}
+
+.postSaves{
+  @apply flex gap-4 items-center justify-start p-4 w-1/2 md:w-full;
+  p{
+    @apply text-lg;
+  }
+  button{
+    @apply text-3xl;
+  }
+}

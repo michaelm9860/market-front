@@ -1,0 +1,89 @@
+.header {
+  height: 12vh;
+  .navbar {
+    @apply flex justify-between items-center p-4 fixed w-full z-30;
+    height: 12vh;
+    background: rgb(146, 202, 244);
+    background: linear-gradient(
+      to top right,
+      rgba(146, 202, 244, 1) 0%,
+      rgba(101, 164, 210, 1) 31%,
+      rgba(68, 122, 161, 1) 100%
+    );
+  }
+  img {
+    @apply rounded-full;
+    height: 10vh;
+  }
+  .homeIcon {
+    border: calc(0.05 * 10vh) solid #08436d;
+  }
+
+  .profileIcon {
+    border: calc(0.05 * 10vh) solid #f9f9f9;
+  }
+
+  p {
+    @apply text-white text-lg font-medium;
+  }
+
+  .ifNotLoggedWideRes{
+    @apply flex gap-4;
+    .linkIfNotLogged{
+        @apply text-base font-thin;
+        &:hover{
+          @apply text-blue-900;
+        }
+      }
+  }
+
+  .wideResMenuItem {
+    @apply max-md:hidden;
+  }
+  .searchContainer {
+    @apply flex justify-center w-1/2 max-md:flex-1 max-md:pl-4 max-md:pr-4;
+    .searchInput {
+      @apply w-full p-2 rounded-3xl border-2 border-gray-300;
+    }
+  }
+  .menuBtn {
+    @apply text-white text-4xl md:hidden h-full;
+  }
+  .sideMenu {
+    @apply flex flex-col fixed top-0 right-0 h-screen z-50 pl-4 pr-4 transform translate-x-full transition-transform duration-100 ease-linear;
+    width: 70vw;
+    background: rgb(146, 202, 244);
+    background: linear-gradient(
+      to top right,
+      rgba(146, 202, 244, 1) 0%,
+      rgba(101, 164, 210, 1) 31%,
+      rgba(68, 122, 161, 1) 100%
+    );
+    .searchContainer {
+      @apply w-full;
+    }
+    img {
+      float: right;
+    }
+    > * {
+      @apply pt-4 pb-4;
+      border-bottom: 1px solid #fff;
+    }
+    .closeMenuBtn {
+      @apply text-white text-4xl opacity-70 border-none absolute top-0 left-0 p-4;
+    }
+
+    .profileIcon {
+      height: 15vh;
+      border: calc(0.05 * 15vh) solid #f9f9f9;
+    }
+  }
+
+  .sideMenuActive {
+    @apply translate-x-0;
+  }
+
+  .sideMenuActiveNotLogged{
+    @apply pt-16;
+  }
+}

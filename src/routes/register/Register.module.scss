@@ -1,0 +1,77 @@
+.formContainer{
+    @apply p-4 flex flex-col items-start relative;
+    &::before {
+        content: "";
+        @apply absolute bottom-0 right-0 w-3/5 h-full max-md:hidden ;
+        background-image: url("/public/assets/stall_icon.jpg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.9;
+        z-index: -1;
+      }
+    h3{
+        @apply text-2xl font-semibold pb-4;
+    }
+    .registerForm{
+        @apply flex flex-col gap-4 items-start md:w-2/5 w-full p-4 rounded-3xl;
+        border: 2px solid #447aa1;
+        .registerInputField{
+            @apply w-full p-2 rounded-3xl border-2 border-gray-300;
+        }
+        .errorP{
+            @apply text-red-500 max-w-full;
+        }
+        .invalidInputField{
+            @apply border-2 border-red-500;
+        }
+        .validInputField{
+            @apply border-2 border-green-500;
+        }
+
+        .submitBtn{
+            @apply p-2 w-full text-center text-white rounded-3xl;
+            background-color: #447aa1;
+        }
+
+        .inputFile{
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .inputFileLabel{
+            @apply p-2 w-full text-center text-white rounded-3xl flex justify-center items-center;
+            background-color: #447aa1;
+            span{
+                @apply flex-1;
+            }
+        }
+
+        .inputFile + .inputFileLabel{
+            cursor: pointer;
+            transition: all 0.3s ;
+            &:hover{
+                outline: 1px solid #447aa1;
+                background-color: white;
+                color: #447aa1;
+            }
+        }
+        
+        .inputFile:focus ~ .inputFileLabel{
+            outline: 1px solid #447aa1;
+            background-color: white;
+            color: #447aa1;
+        }
+
+        .goToLogin{
+            @apply text-base;
+            a{
+                @apply text-blue-500;
+            }
+        }    
+    }
+}

@@ -1,0 +1,110 @@
+.gridDisplay,
+.listDisplay {
+  @apply h-full w-full;
+  .card {
+    @apply flex items-start justify-between rounded-lg overflow-hidden;
+    border: 2px solid #447aa1;
+    .cardImageContainer {
+      @apply h-full w-1/2 flex items-center justify-start relative;
+      img {
+        @apply max-h-full object-contain;
+        &:hover {
+          @apply cursor-pointer;
+        }
+      }
+      .userImage {
+        @apply h-4/5 rounded-full ml-2 transition-all duration-100 w-min;
+        border: 2px solid #447aa1;
+        &:hover {
+          @apply rounded-none border-none z-20;
+          transform: scale(1.2);
+        }
+      }
+      .postOrGroupImage {
+        @apply h-full w-fit;
+      }
+    }
+    .cardDetails {
+      @apply flex flex-col items-end justify-between h-full p-2 w-1/2 relative;
+      .name{
+        text-align: end;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 60%;
+        width: 100%;
+      }
+      p{
+        @apply flex items-center gap-2;
+      }
+    }
+  }
+}
+
+.listDisplay {
+  @apply flex flex-col items-center justify-start gap-2;
+  .cardInList {
+    @apply w-full;
+    @media (min-width: 768px) {
+      height: 20rem;
+    }
+    @media (max-width: 768px) {
+      height: 10rem;
+    }
+    .cardDetails {
+      .name {
+        @apply text-3xl md:text-6xl;
+        
+      }
+      p {
+        @apply text-2xl md:text-4xl;
+      }
+
+      .activeUserCardMark {
+        @apply p-1 rounded-2xl text-sm;
+        color: #00693e;
+        background-color: #4fffb0;
+      }
+    }
+  }
+}
+
+.gridDisplay {
+  @apply grid grid-cols-3 gap-2;
+  .cardInGrid {
+    height: 8rem;
+    .cardDetails {
+      .name {
+        @apply text-2xl font-semibold;
+      }
+      p {
+        @apply text-2xl;
+      }
+      .activeUserCardMark {
+        @apply p-1 rounded-2xl text-sm;
+        color: #00693e;
+        background-color: #4fffb0;
+      }
+    }
+  }
+}
+
+.displayControls {
+  @apply rounded-lg flex items-center justify-between self-end relative;
+  color: #447aa1;
+  width: fit-content;
+  border: 2px solid #447aa1;
+  &::after {
+    content: "";
+    @apply h-full absolute left-1/2;
+    width: 2px;
+    background-color: #447aa1;
+  }
+  .changeDisplayBtn {
+    @apply text-2xl p-1;
+    border: #447aa1;
+  }
+  .selectedDisplay {
+    @apply bg-slate-400;
+  }
+}
+

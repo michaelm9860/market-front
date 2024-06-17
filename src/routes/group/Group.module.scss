@@ -1,0 +1,158 @@
+.groupImageContainer {
+  @apply w-full;
+  height: 70vh;
+  @media (max-width: 768px) {
+    height: 30vh;
+  }
+  img {
+    @apply w-full h-full object-contain;
+  }
+}
+
+.groupDetails {
+  @apply p-4 flex flex-col gap-4 items-start justify-center md:flex-row md:justify-between;
+  h3 {
+    @apply text-3xl font-semibold;
+  }
+  .groupInfo {
+    @apply flex flex-col gap-2 md:flex-row md:gap-4 md:items-center;
+    .createdAt {
+      @apply text-lg italic font-semibold text-gray-500 opacity-80;
+    }
+    .groupPrivate {
+      @apply text-lg;
+    }
+  }
+}
+
+.descriptionContainer {
+  @apply p-4 w-full md:w-1/3;
+
+  .descriptionBtn {
+    @apply text-lg p-2 text-center rounded-3xl w-1/2;
+
+    border: 1px solid #447aa1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .description {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+  }
+  .showDescription {
+    max-height: 500px;
+  }
+  .rotateIcon {
+    @apply transform transition-transform duration-300 ease-in-out;
+    transform: rotate(180deg);
+  }
+  .rotateIconBack {
+    @apply transform transition-transform duration-300 ease-in-out;
+    transform: rotate(0deg);
+  }
+}
+
+.groupActivitiesMenu {
+  @apply flex gap-24 items-center md:justify-center justify-start p-4 max-sm:overflow-x-scroll max-sm:scroll-smooth;
+  .selectActivity {
+    @apply font-semibold text-2xl rounded-lg relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0); // Start with scaleX(0) to make it 0 width
+      width: 100%;
+      height: 2px;
+      background-color: #447aa1;
+      transform-origin: center;
+      transition: transform 0.2s ease-out; // Transition the transform property
+      @apply rounded-full;
+    }
+    &.active::after {
+      transform: translateX(-50%) scaleX(1); // Scale to full width on active class
+    }
+    .pendingUsersNotification {
+      @apply absolute text-blue-700 text-base;
+      right: -1rem;
+      top: -1rem;
+    }
+  }
+}
+
+.selectedActivity {
+  @apply flex flex-col p-2 gap-2;
+  .nothingToShow {
+    @apply flex flex-col gap-2 items-center justify-center pt-4 text-3xl text-gray-500 opacity-50;
+  }
+}
+
+.groupControls {
+  @apply flex gap-4 items-center justify-start max-md:flex-col p-4;
+  .createPostInGroupBtn {
+    @apply p-4 bg-white rounded-full md:text-xl text-lg;
+    border: 2px solid #447aa1;
+    background: linear-gradient(
+      315deg,
+      rgba(255, 255, 255, 1) 20%,
+      rgba(68, 122, 161, 1) 50%,
+      rgba(255, 255, 255, 1) 80%
+    );
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: left -500px bottom 0;
+    transition: background-position 0.5s ease-in-out; /* Added transition for background-position */
+
+    &:hover {
+      background-position: right -500px bottom 0; /* Added hover effect for background-position */
+    }
+  }
+
+  .leaveGroupBtn,
+  .deleteGroupBtn {
+    @apply p-2 text-red-500;
+  }
+}
+
+.editOptions {
+  @apply flex flex-col gap-4 items-start p-4 md:w-1/2 w-full;
+  .saveChangesBtn {
+    @apply text-white transition-all duration-100 p-2 rounded-3xl;
+    background-color: #447aa1;
+    &:hover {
+      outline: 2px solid #447aa1;
+      color: #447aa1;
+      background-color: white;
+    }
+  }
+  input,
+  textarea {
+    @apply w-full p-2 rounded-3xl border-2 border-gray-300;
+  }
+  input {
+    @apply h-8;
+  }
+
+  .checkboxContainer {
+    @apply flex items-center justify-start gap-2;
+    input[type="checkbox"] {
+      @apply h-6 w-6;
+    }
+    label {
+      @apply text-lg;
+    }
+  }
+}
+
+.editGroupBtn {
+  @apply p-2 text-blue-500;
+}
+
+.cardBtns {
+  @apply flex items-center justify-between p-2 absolute top-0 w-full;
+  button{
+    @apply text-xl;
+  }
+}

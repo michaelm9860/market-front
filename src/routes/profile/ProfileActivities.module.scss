@@ -1,0 +1,30 @@
+.activitiesMenu {
+  @apply flex gap-24 items-center md:justify-center justify-start p-4 max-sm:overflow-x-scroll max-sm:scroll-smooth;
+  .selectActivity {
+    @apply font-semibold text-2xl rounded-lg relative;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0); // Start with scaleX(0) to make it 0 width
+        width: 100%;
+        height: 2px;
+        background-color: #447aa1; 
+        transform-origin: center;
+        transition: transform 0.2s ease-out; // Transition the transform property
+        @apply rounded-full;
+      }
+      &.active::after {
+        transform: translateX(-50%) scaleX(1); // Scale to full width on active class
+      }
+  }
+
+}
+
+.selectedActivity {
+  @apply flex flex-col p-2 gap-2;
+  .nothingToShow {
+    @apply flex flex-col gap-2 items-center justify-center pt-4 text-3xl text-gray-500 opacity-50;
+  }
+}
